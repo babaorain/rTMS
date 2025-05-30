@@ -138,12 +138,6 @@ body {
   font-size: 1.2em;
   color: var(--accent);
 }
-@media (max-width: 700px) {
-  .process-steps {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.1em;
-  }
   .arrow {
     width: 100%; height: 20px; justify-content: center;
   }
@@ -194,9 +188,6 @@ body {
   transition: background .17s, transform .13s;
 }
 .carousel-btn:hover { background: var(--accent); transform: scale(1.11);}
-@media (max-width: 700px) {
-  .carousel-card { min-width: 98vw; max-width: 99vw; flex: 0 0 98vw; }
-}
 
 /* 醫療團隊卡片 */
 .team-list { display: flex; flex-wrap: wrap; gap: 1em; }
@@ -214,47 +205,6 @@ body {
 .team-name { font-weight: bold; font-size: 1.02em; }
 .team-role { color: #184579; font-size: 1em; margin-bottom: 0.2em;}
 .team-bio { color: #7a8c94; font-size: 0.95em; }
-@media (max-width: 700px) {
-  .team-list {
-    flex-direction: column;
-    gap: 0.5em;
-  }
-  .team-card {
-    max-width: 99vw;
-    min-width: 98vw;
-    margin: 0 auto;
-    /* 建議加強padding */
-    padding-left: 1vw;
-    padding-right: 1vw;
-  }
-}
-@media (max-width: 700px) {
-  .carousel-card {
-    min-width: 98vw;
-    max-width: 99vw;
-    flex: 0 0 98vw;
-    margin: 0 auto 0.3em auto;
-    /* padding左右同樣可微調 */
-    padding-left: 1vw;
-    padding-right: 1vw;
-  }
-}
-@media (max-width: 700px) {
-  .process-steps {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.1em;
-  }
-  .step {
-    max-width: 99vw;
-    min-width: 98vw;
-    margin: 0 auto 0.6em auto;
-    /* padding左右同樣可微調 */
-    padding-left: 1vw;
-    padding-right: 1vw;
-  }
-}
-
 
 /* FAQ */
 .faq-list { margin-top: 1em; }
@@ -287,4 +237,47 @@ body {
 .faq-item.active .faq-toggle { transform: rotate(45deg);}
 .hospital-info { font-size: 1.03em; margin-top: 0.7em; color: var(--primary); }
 .hospital-label { font-weight: bold; }
+
+@media (max-width: 700px) {
+  /* FAQ */
+  .faq-item {
+    max-width: 99vw;
+    min-width: 98vw;
+    margin: 0 auto 0.6em auto;
+  }
+  /* Team 單卡全寬 */
+  .team-list {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .team-card {
+    max-width: 99vw;
+    min-width: 98vw;
+    margin: 0 auto;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  /* Review/Video 單卡全寬 */
+  .carousel-card {
+    min-width: 98vw;
+    max-width: 99vw;
+    flex: 0 0 98vw;
+    margin: 0 auto 0.3em auto;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  /* 治療流程卡全寬 */
+  .process-steps {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.1em;
+  }
+  .step {
+    max-width: 99vw;
+    min-width: 98vw;
+    margin: 0 auto 0.6em auto;
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+}
 
