@@ -39,25 +39,122 @@
     border-radius: 0 0 var(--radius) var(--radius);
     position: relative;
   }
-  .hero-title {
-  font-size: 3.5rem;
+  .hero-bar {
+  background: #f4f7fb;
+  border-radius: 1rem;
+  margin: 18px 10px 0 10px;
+  box-shadow: 0 2px 16px #18457911;
+  overflow: hidden;
+}
+
+.hero-header {
+  display: flex;
+  align-items: center;
+  padding: 18px 36px 12px 24px;
+  background: #fff;
+  border-radius: 1rem 1rem 0 0;
+  border-bottom: 1px solid #e0eaf3;
+  gap: 16px;
+}
+
+.hero-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 2.5px solid #e0eaf3;
+  background: #fff;
+}
+
+.hero-hospital {
+  font-size: 1.52rem;
   font-weight: 700;
-  margin: 0 0 1rem 0;
-  letter-spacing: 0.05em;
+  color: #184579;
+  letter-spacing: 0.03em;
+  font-family: 'Noto Sans TC', 'Microsoft JhengHei', Arial, sans-serif;
 }
+
+.hero-main {
+  background: #184579;
+  position: relative;
+  min-height: 280px;
+  border-radius: 0 0 1rem 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg-svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+  width: 340px;
+  height: 270px;
+}
+
+.hero-content {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 52px 16px 42px 16px;
+}
+
+.hero-title {
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 8px #0002;
+}
+
+.hero-desc {
+  color: #fff;
+  font-size: 1.24rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  text-shadow: 0 2px 8px #0001;
+  letter-spacing: 0.02em;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: #fff;
+  color: #184579;
+  font-weight: bold;
+  font-size: 1.45rem;
+  border-radius: 14px;
+  padding: 10px 40px 10px 40px;
+  text-decoration: none;
+  box-shadow: 0 2px 18px #18347a13;
+  transition: background 0.16s, color 0.16s, box-shadow 0.16s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+.hero-btn:hover, .hero-btn:focus {
+  background: #e9f1f7;
+  color: #11365e;
+  box-shadow: 0 6px 24px #18457922;
+}
+
 @media (max-width: 600px) {
-  .hero-title {font-size: 2rem;}
+  .hero-header {padding: 13px 12px 8px 8px;}
+  .hero-hospital {font-size: 1.1rem;}
+  .hero-main {min-height: 180px;}
+  .hero-content {padding: 28px 3vw 22px 3vw;}
+  .hero-title {font-size: 1.25rem;}
+  .hero-desc {font-size: 0.98rem;}
+  .hero-btn {font-size: 1.08rem; padding: 7px 22px;}
+  .hero-logo {width: 35px; height: 35px;}
+  .hero-bg-svg {width: 140px; height: 88px;}
 }
-  .hero-desc {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
-  .hero-illustration {
-    width: 120px;
-    margin-bottom: 1.5rem;
-    animation: float 4s ease-in-out infinite;
-    /* 建議圖片也換深藍/灰色插圖 */
-  }
   @keyframes float {
     0%, 100% { transform: translateY(0);}
     50% { transform: translateY(-12px);}
@@ -343,12 +440,30 @@
 
 </head>
 <body>
-  <!-- Hero Section -->
-  <header>
-    <h1 class="hero-title">rTMS經顱磁刺激</h1>
-    <div class="hero-desc">重拾新生活，腦部神經復健新選擇<br>科學引領復健新里程</div>
-    <button class="btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior: 'smooth'});">立即預約</button>
-  </header>
+  <!-- Hero Section 完全仿照圖片 -->
+<div class="hero-bar">
+  <div class="hero-header">
+    <img src="https://www.kmuh.org.tw/images/2016/logo.png" class="hero-logo" alt="醫院LOGO">
+    <span class="hero-hospital">高雄醫學大學附設中和紀念醫院 復健部</span>
+  </div>
+  <div class="hero-main">
+    <div class="hero-bg-svg">
+      <!-- 右下角裝置/線條圖，可換成你要的SVG或先留空 -->
+      <svg width="320" height="270" viewBox="0 0 320 270" fill="none" style="position:absolute;bottom:0;right:0;z-index:1;opacity:0.17;">
+        <circle cx="200" cy="200" r="115" stroke="#fff" stroke-width="6"/>
+        <rect x="230" y="180" width="70" height="120" rx="13" fill="#fff" fill-opacity="0.16" stroke="#fff" stroke-width="3"/>
+        <path d="M 260 260 L 290 210" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+        <path d="M 240 220 L 250 250" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="hero-content">
+      <div class="hero-title">重複經顱磁刺激治療（rTMS）</div>
+      <div class="hero-desc">非侵入性神經調節技術，有效幫助中風患者肢體與語言恢復</div>
+      <a href="#booking" class="hero-btn">立即預約</a>
+    </div>
+  </div>
+</div>
+
 
   <!-- rTMS基本原理 -->
   <div class="section" id="about">
