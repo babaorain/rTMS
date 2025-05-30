@@ -4,220 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>rTMS 經顱磁刺激｜高雄醫學大學附設中和紀念醫院</title>
+  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-  /* ====== 全站主色系與字體設定 ====== */
-  :root {
-    --primary: #184579;
-    --secondary: #e9f1f7;
-    --accent: #3fa9f5;
-    --bg: #f4f7fb;
-    --card: #fff;
-    --shadow: 0 2px 10px rgba(24, 69, 121, 0.10);
-    --radius: 1.2rem;
-  }
-  body {
-    background: var(--bg);
-    font-family: 'Noto Sans TC', 'Microsoft JhengHei', Arial, sans-serif;
-    color: #222;
-    margin: 0;
-    padding: 0;
-  }
-  .main-wrap {
-    max-width: 940px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-
-  /* ===== Hero 區塊 ===== */
-  .hero-bar {
-    background: var(--bg);
-    border-radius: var(--radius);
-    margin: 20px auto;
-    box-shadow: var(--shadow);
-    overflow: visible;
-    position: relative;
-  }
-  .hero-header {
-    display: flex;
-    align-items: center;
-    padding: 0.8rem 1rem;
-  }
-  .hero-logo {
-    width: clamp(2.2rem, 10vw, 3.2rem);
-    height: auto;
-    border-radius: 50%;
-    border: 2px solid #e0eaf3;
-    margin-right: 0.6rem;
-  }
-  .hero-hospital {
-    font-size: clamp(1rem, 4vw, 1.4rem);
-    font-weight: 700;
-    color: var(--primary);
-  }
-  .hero-main {
-    background: var(--primary);
-    border-radius: 0 0 var(--radius) var(--radius);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: clamp(2rem, 8vw, 4rem) 1rem 1rem;
-    position: relative;
-  }
-  .hero-title {
-    color: #fff;
-    font-size: clamp(1.5rem, 6vw, 2.85rem);
-    font-weight: 900;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
-  }
-  .hero-desc {
-    color: #fff;
-    font-size: clamp(1rem, 4vw, 1.3rem);
-    margin-bottom: 1.2rem;
-    max-width: 90%;
-  }
-  .hero-btn {
-    background: #fff;
-    color: var(--primary);
-    font-size: clamp(0.9rem, 3vw, 1.4rem);
-    padding: 0.6rem 2rem;
-    border-radius: 1rem;
-    box-shadow: var(--shadow);
-    transition: transform 0.2s, background 0.2s;
-  }
-  .hero-btn:hover {
-    transform: translateY(-3px);
-    background: var(--secondary);
-  }
-  .hero-wave svg { display:block; width:100%; height: clamp(1rem,4vw,3rem); }
-
-  /* ===== Section 公用 ===== */
-  .section {
-    background: var(--card);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-top: 1rem;
-    padding: clamp(1rem,4vw,2.2rem) 1rem;
-  }
-  .section-title {
-    font-size: clamp(1.2rem,5vw,1.65rem);
-    font-weight: bold;
-    color: var(--primary);
-    margin-bottom: 0.8rem;
-  }
-
-  /* ===== 治療流程 ===== */
-  .process-steps {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: space-between;
-    margin-top: 1rem;
-    position: relative;
-  }
-  .step {
-    flex: 1 1 calc(50% - 1rem);
-    min-width: calc(100% - 2rem);
-    max-width: calc(50% - 1rem);
-    background: var(--secondary);
-    border-radius: var(--radius);
-    padding: 0.8rem;
-    transition: transform 0.2s;
-  }
-  .step:hover { transform: translateY(-4px); }
-  @media (min-width: 600px) {
-    .step { min-width: 180px; max-width: 220px; }
-  }
-
-  /* ===== Video & Review Carousel ===== */
-  .review-carousel-wrap {
-    overflow: hidden;
-    position: relative;
-    margin-top: 1rem;
-  }
-  .review-carousel {
-    display: flex;
-    gap: 1rem;
-    padding-bottom: 1rem;
-    transition: transform 0.4s ease;
-  }
-  .review-card2, .video-card2 {
-    flex: 0 0 min(90%, 340px);
-    background: var(--secondary);
-    border-radius: var(--radius);
-    padding: 1rem;
-    box-shadow: var(--shadow);
-    transition: transform 0.2s;
-  }
-  .review-card2:hover, .video-card2:hover { transform: translateY(-3px); }
-  /* 按鈕調整 */
-  .review-carousel-btns {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-  .carousel-btn {
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 1.2rem;
-  }
-
-  /* ===== 團隊卡片 ===== */
-  .team-list { display: flex; flex-wrap: wrap; gap: 0.8rem; }
-  .team-card {
-    flex: 0 0 min(90%, 200px);
-    padding: 0.8rem;
-    background: var(--secondary);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    text-align: center;
-  }
-  .team-photo { width: 4.5rem; height: 4.5rem; }
-
-  /* ===== FAQ ===== */
-  .faq-item {
-    padding: 0.8rem;
-    border-radius: var(--radius);
-    background: var(--secondary);
-    margin-bottom: 0.6rem;
-  }
-  .faq-question { font-size: clamp(1rem,4vw,1.1rem); }
-  .faq-answer { font-size: clamp(0.9rem,3vw,1rem); }
-
-  /* ===== 醫院資訊 ===== */
-  .hospital-info { font-size: clamp(0.9rem,3vw,1rem); }
-
-  /* ===== 小細節調整 ===== */
-  iframe.iframe-responsive { border-radius: var(--radius); }
-</style>
-
 </head>
 <body>
 <div class="main-wrap">
 
-  <!-- ===== Hero 專業區塊＋圓弧銜接 ===== -->
+  <!-- ===== Hero 區 ===== -->
   <div class="hero-bar">
-    <!-- 上方LOGO + 醫院名稱 -->
     <div class="hero-header">
-      <img src="https://www.kmuh.org.tw/KMUHInterWeb/Pages/images/kmuhlogo.gif" class="hero-logo" alt="醫院LOGO">
+      <img src="https://www.kmuh.org.tw/KMUHInterWeb/Pages/images/kmuhlogo.gif" class="hero-logo" alt="LOGO">
       <span class="hero-hospital">高雄醫學大學附設中和紀念醫院 復健部</span>
     </div>
-    <!-- 主區塊 -->
     <div class="hero-main">
       <div class="hero-content">
-        <div class="hero-title">重複經顱磁刺激治療（rTMS）</div>
-        <div class="hero-desc">非侵入性神經調節技術，有效幫助中風患者肢體與語言恢復</div>
-        <a href="#booking" class="hero-btn hover-float">立即預約</a>
+        <h1 class="hero-title">重複經顱磁刺激治療（rTMS）</h1>
+        <p class="hero-desc">非侵入性神經調節技術，有效幫助中風患者肢體與語言恢復</p>
+        <a href="#booking" class="hero-btn">立即預約</a>
       </div>
-      <!-- 右下背景圖/線條插圖略過，日後可補 -->
     </div>
   </div>
 
-  <!-- ===== rTMS 適應症＋治療流程區 ===== -->
-  <div class="section" id="indication">
+  <!-- ===== 適應症＋治療流程 ===== -->
+  <section class="section" id="indication">
     <div class="section-title">適應症 & 治療流程</div>
     <div>
       <b>rTMS常見適應症：</b>
@@ -228,160 +37,112 @@
         <li>周邊神經損傷後康復</li>
       </ul>
     </div>
-    <div style="margin-top:1.4em;">
+    <div style="margin-top:1.2em;">
       <b>治療流程：</b>
-      <!-- 流程步驟可互動，箭頭RWD -->
       <div class="process-steps">
-        <div class="step hover-float">
-          <div style="font-size:2.2em;margin-bottom:0.2em;">🩺</div>
-          <div class="step-title">專業醫師評估</div>
-          <div class="step-desc">由復健專科醫師進行個別狀況評估與說明治療計畫。</div>
-        </div>
-        <div class="step hover-float">
-          <div style="font-size:2.2em;margin-bottom:0.2em;">📑</div>
-          <div class="step-title">量身訂製療程</div>
-          <div class="step-desc">根據病人情況，規劃個人化rTMS治療參數與次數。</div>
-        </div>
-        <div class="step hover-float">
-          <div style="font-size:2.2em;margin-bottom:0.2em;">🧠</div>
-          <div class="step-title">執行rTMS刺激</div>
-          <div class="step-desc">於治療室內安全、無痛地進行經顱磁刺激。</div>
-        </div>
-        <div class="step hover-float">
-          <div style="font-size:2.2em;margin-bottom:0.2em;">🔄</div>
-          <div class="step-title">療程追蹤</div>
-          <div class="step-desc">持續追蹤功能恢復，必要時調整治療計畫。</div>
-        </div>
+        <div class="step hover-float"><div>🩺</div>專業醫師評估</div>
+        <div class="arrow"></div>
+        <div class="step hover-float"><div>📑</div>量身訂製療程</div>
+        <div class="arrow"></div>
+        <div class="step hover-float"><div>🧠</div>執行rTMS刺激</div>
+        <div class="arrow"></div>
+        <div class="step hover-float"><div>🔄</div>療程追蹤</div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ===== rTMS 治療介紹影片（有卡片輪播功能） ===== -->
-  <div class="section" id="video">
+  <!-- ===== 治療介紹影片（可輪播） ===== -->
+  <section class="section" id="video">
     <div class="section-title">rTMS 治療介紹影片</div>
-    <div class="review-carousel-wrap">
-      <div class="review-carousel" id="videoCarousel">
-        <!-- 卡片1 -->
-        <div class="review-card2 video-card2 hover-float">
-          <iframe class="iframe-responsive" src="https://www.youtube.com/embed/_Cty7pT7T7w" allowfullscreen style="width:100%; aspect-ratio:16/9; border-radius:1em; border:none; box-shadow:0 2px 10px #1845790e;"></iframe>
-          <div style="margin:0.9em 0 0.1em 0;font-weight:600;font-size:1.1em;">什麼是 rTMS？</div>
-          <div style="color:#466; font-size:0.97em;">醫師解說rTMS基本原理與治療流程</div>
+    <div class="carousel-wrap">
+      <div class="carousel" id="videoCarousel">
+        <div class="carousel-card">
+          <iframe class="iframe-responsive" src="https://www.youtube.com/embed/_Cty7pT7T7w" allowfullscreen></iframe>
+          <div class="carousel-caption">什麼是 rTMS？<br><small>醫師解說原理與流程</small></div>
         </div>
-        <!-- 卡片2 -->
-        <div class="review-card2 video-card2 hover-float">
-          <iframe class="iframe-responsive" src="https://www.youtube.com/embed/tFdX19XVtFI" allowfullscreen style="width:100%; aspect-ratio:16/9; border-radius:1em; border:none; box-shadow:0 2px 10px #1845790e;"></iframe>
-          <div style="margin:0.9em 0 0.1em 0;font-weight:600;font-size:1.1em;">復健領域應用</div>
-          <div style="color:#466; font-size:0.97em;">臨床實例說明rTMS在神經復健的實際應用</div>
+        <div class="carousel-card">
+          <iframe class="iframe-responsive" src="https://www.youtube.com/embed/tFdX19XVtFI" allowfullscreen></iframe>
+          <div class="carousel-caption">復健臨床應用<br><small>實例說明</small></div>
         </div>
       </div>
-      <div class="review-carousel-btns">
-        <button class="carousel-btn" id="videoPrev" aria-label="上一段">&lt;</button>
-        <button class="carousel-btn" id="videoNext" aria-label="下一段">&gt;</button>
+      <div class="carousel-btns">
+        <button class="carousel-btn" id="videoPrev">&lt;</button>
+        <button class="carousel-btn" id="videoNext">&gt;</button>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ===== 患者體驗分享（左右滑動卡片） ===== -->
-  <div class="section" id="review">
-    <div class="section-title" style="justify-content:center;">患者治療體驗分享</div>
-    <div class="review-carousel-wrap">
-      <div class="review-carousel" id="reviewCarousel">
-        <!-- 卡片1 -->
-        <div class="review-card2 hover-float">
-          <div class="reviewer">
-            <div class="reviewer-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#184579" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/></svg>
-            </div>
-            <div>
-              <div class="reviewer-name">陳小姐</div>
-              <div class="reviewer-type">憂鬱症患者</div>
-            </div>
-          </div>
-          <div class="review-text2">
-            "經過8週的TMS治療，我的憂鬱症狀明顯改善。以前總是感到無力和悲傷，現在能夠重新享受生活，重拾工作熱情。治療過程舒適，醫護人員非常專業和關懷。"
-          </div>
-          <div class="stars2">★★★★★</div>
+  <!-- ===== 患者體驗分享（可輪播） ===== -->
+  <section class="section" id="review">
+    <div class="section-title">患者治療體驗分享</div>
+    <div class="carousel-wrap">
+      <div class="carousel" id="reviewCarousel">
+        <div class="carousel-card">
+          <div class="reviewer">陳小姐 <span>（憂鬱症）</span></div>
+          <div class="review-text">"8週TMS治療後，症狀明顯改善，能重新享受生活。醫護團隊非常專業。"</div>
+          <div class="stars">★★★★★</div>
         </div>
-        <!-- 卡片2 -->
-        <div class="review-card2 hover-float">
-          <div class="reviewer">
-            <div class="reviewer-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#184579" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/></svg>
-            </div>
-            <div>
-              <div class="reviewer-name">林先生</div>
-              <div class="reviewer-type">焦慮症患者</div>
-            </div>
-          </div>
-          <div class="review-text2">
-            "我曾嘗試過多種藥物治療焦慮症，效果都不理想。接受TMS治療後，我的焦慮發作頻率明顯減少，睡眠品質也大幅改善。最重要的是，治療過程沒有藥物的副作用，讓我能夠保持清醒的頭腦工作。"
-          </div>
-          <div class="stars2">★★★★★</div>
+        <div class="carousel-card">
+          <div class="reviewer">林先生 <span>（焦慮症）</span></div>
+          <div class="review-text">"嘗試多種藥物無效，TMS減少焦慮發作且無副作用。"</div>
+          <div class="stars">★★★★★</div>
         </div>
-        <!-- 卡片3 -->
-        <div class="review-card2 hover-float">
-          <div class="reviewer">
-            <div class="reviewer-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#184579" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/></svg>
-            </div>
-            <div>
-              <div class="reviewer-name">王女士</div>
-              <div class="reviewer-type">慢性疼痛患者</div>
-            </div>
-          </div>
-          <div class="review-text2">
-            "我因為車禍後遺症導致慢性疼痛多年，嘗試過各種治療都沒有效果。TMS療程讓我的疼痛大幅減輕，也能重新回歸正常生活。"
-          </div>
-          <div class="stars2">★★★★★</div>
+        <div class="carousel-card">
+          <div class="reviewer">王女士 <span>（慢性疼痛）</span></div>
+          <div class="review-text">"車禍後遺症疼痛多年，TMS療程大幅減輕不適，重返正常生活。"</div>
+          <div class="stars">★★★★★</div>
         </div>
       </div>
-      <div class="review-carousel-btns">
-        <button class="carousel-btn" id="carouselPrev" aria-label="上一則">&lt;</button>
-        <button class="carousel-btn" id="carouselNext" aria-label="下一則">&gt;</button>
+      <div class="carousel-btns">
+        <button class="carousel-btn" id="reviewPrev">&lt;</button>
+        <button class="carousel-btn" id="reviewNext">&gt;</button>
       </div>
     </div>
-  </div>
-  
-<!-- 醫療團隊介紹 -->
-  <div class="section" id="team">
-    <div class="section-title">
-      醫療團隊介紹
-    </div>
+  </section>
+
+  <!-- ===== 醫療團隊 ===== -->
+  <section class="section" id="team">
+    <div class="section-title">醫療團隊介紹</div>
     <div class="team-list">
       <div class="team-card">
         <img class="team-photo" src="https://randomuser.me/api/portraits/men/32.jpg" alt="醫師A"/>
         <div class="team-name">林建宇 醫師</div>
         <div class="team-role">復健專科主治醫師</div>
-        <div class="team-bio">專長：神經復健、運動障礙治療，致力於提升病患生活品質。</div>
+        <div class="team-bio">專長：神經復健、運動障礙治療。</div>
       </div>
       <div class="team-card">
         <img class="team-photo" src="https://randomuser.me/api/portraits/women/21.jpg" alt="醫師B"/>
         <div class="team-name">黃怡婷 醫師</div>
         <div class="team-role">資深住院醫師</div>
-        <div class="team-bio">熱心投入rTMS治療研究，關注神經修復與新興療法。</div>
+        <div class="team-bio">專注rTMS治療研究，關注神經修復。</div>
       </div>
     </div>
-  </div>
-  
+  </section>
+
   <!-- ===== FAQ ===== -->
-  <div class="section" id="faq">
+  <section class="section" id="faq">
     <div class="section-title">常見問答</div>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-question">rTMS治療會痛嗎？ <span class="faq-toggle">＋</span></div>
-        <div class="faq-answer">治療過程為非侵入性，大多數人僅會感覺輕微敲擊感或皮膚微震，幾乎無明顯疼痛。</div></div>
-      <div class="faq-item"><div class="faq-question">rTMS治療多久見效？ <span class="faq-toggle">＋</span></div>
-        <div class="faq-answer">部分患者於數次治療後即可感受改善，實際療效依個人狀況而異，建議完整療程後再評估。</div></div>
-      <div class="faq-item"><div class="faq-question">治療後需要住院嗎？ <span class="faq-toggle">＋</span></div>
-        <div class="faq-answer">rTMS為門診治療，治療後可正常返家，不需住院。</div></div>
-      <div class="faq-item"><div class="faq-question">治療過程安全嗎？ <span class="faq-toggle">＋</span></div>
-        <div class="faq-answer">治療過程安全，副作用輕微，常見如局部頭皮輕微不適，少數人可能出現暫時性頭痛。</div></div>
-      <div class="faq-item"><div class="faq-question">有哪些人不適合接受rTMS？ <span class="faq-toggle">＋</span></div>
-        <div class="faq-answer">裝有心律調節器、腦內金屬植入物者，或有癲癇病史者，應先諮詢醫師再行治療。</div></div>
+      <div class="faq-item"><div class="faq-question">rTMS治療會痛嗎？<span class="faq-toggle">＋</span></div>
+        <div class="faq-answer">治療過程為非侵入性，大多數人僅感輕微敲擊感或皮膚微震。</div>
+      </div>
+      <div class="faq-item"><div class="faq-question">多久見效？<span class="faq-toggle">＋</span></div>
+        <div class="faq-answer">部分患者於數次治療後即可改善，完整療程效果更佳。</div>
+      </div>
+      <div class="faq-item"><div class="faq-question">需要住院嗎？<span class="faq-toggle">＋</span></div>
+        <div class="faq-answer">rTMS為門診治療，治療後可返家，不需住院。</div>
+      </div>
+      <div class="faq-item"><div class="faq-question">安全嗎？<span class="faq-toggle">＋</span></div>
+        <div class="faq-answer">過程安全，副作用輕微，僅偶有暫時頭痛。</div>
+      </div>
+      <div class="faq-item"><div class="faq-question">哪些人不適合？<span class="faq-toggle">＋</span></div>
+        <div class="faq-answer">有心律調節器、腦內金屬植入物或癲癇病史者，應諮詢醫師。</div>
+      </div>
     </div>
-  </div>
+  </section>
 
   <!-- ===== 醫院資訊 ===== -->
-  <div class="section" id="info">
+  <section class="section" id="info">
     <div class="section-title">醫院資訊</div>
     <div class="hospital-info">
       <div><span class="hospital-label">院名：</span>高雄醫學大學附設中和紀念醫院</div>
@@ -389,69 +150,8 @@
       <div><span class="hospital-label">電話：</span>07-312-1101</div>
       <div><span class="hospital-label">信箱：</span>service@kmu.edu.tw</div>
     </div>
-  </div>
-</div> <!-- main-wrap end -->
-
-<!-- ===== JS：FAQ展開/收起、卡片輪播、滑動動畫、預約滾動等互動 ===== -->
-<script>
-  // FAQ互動
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-      item.classList.toggle('active');
-    });
-  });
-
-  // Review Carousel 共用切換
-  function initCarousel(carouselId, prevBtnId, nextBtnId) {
-    const carousel = document.getElementById(carouselId);
-    const prevBtn = document.getElementById(prevBtnId);
-    const nextBtn = document.getElementById(nextBtnId);
-    let position = 0;
-    function update() {
-      const card = carousel.querySelector(':scope > div, :scope > .review-card2, :scope > .video-card2');
-      if (!card) return;
-      const style = window.getComputedStyle(card);
-      const gap = parseInt(style.marginRight) || 32;
-      const cardWidth = card.offsetWidth + gap;
-      if (position < 0) position = 0;
-      if (position > carousel.children.length - 1) position = carousel.children.length - 1;
-      carousel.style.transform = `translateX(${-position * cardWidth}px)`;
-    }
-    nextBtn.onclick = () => {
-      if (position < carousel.children.length - 1) { position++; update(); }
-    }
-    prevBtn.onclick = () => {
-      if (position > 0) { position--; update(); }
-    }
-    // 手機滑動
-    let startX = 0, isDown = false;
-    carousel.addEventListener('touchstart', e => {isDown=true; startX = e.touches[0].clientX;});
-    carousel.addEventListener('touchend', () => {isDown=false;});
-    carousel.addEventListener('touchmove', e => {
-      if (!isDown) return;
-      let diff = startX - e.touches[0].clientX;
-      if (diff > 30 && position < carousel.children.length - 1) { position++; update(); isDown=false;}
-      if (diff < -30 && position > 0) { position--; update(); isDown=false;}
-    });
-    window.addEventListener('resize', update);
-    update();
-  }
-  // 啟動兩組卡片輪播
-  initCarousel('reviewCarousel', 'carouselPrev', 'carouselNext');
-  initCarousel('videoCarousel', 'videoPrev', 'videoNext');
-
-  // Hero預約按鈕自動滾動
-  document.querySelectorAll('.hero-btn').forEach(btn => {
-    btn.onclick = function(e) {
-      e.preventDefault();
-      const booking = document.getElementById('info');
-      if (booking) booking.scrollIntoView({behavior:'smooth'});
-    };
-  });
-
-  // 全站: 滑鼠滑過 .hover-float 元素自動浮動（已在CSS設置）
-
-  // 你也可以繼續增加各區塊的動態互動！
-</script>
+  </section>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
