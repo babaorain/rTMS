@@ -241,43 +241,42 @@ body {
 @media (max-width: 700px) {
   /* FAQ */
   .faq-item {
-    max-width: 99vw;
-    min-width: 98vw;
-    margin: 0 auto 0.6em auto;
+    max-width: 99vw !important;
+    min-width: 98vw !important;
+    margin: 0 auto 0.6em auto !important;
   }
   /* Team 單卡全寬 */
   .team-list {
-    flex-direction: column;
-    gap: 0.5em;
+    flex-direction: column !important;
+    gap: 0.5em !important;
   }
   .team-card {
-    max-width: 99vw;
-    min-width: 98vw;
-    margin: 0 auto;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    max-width: 99vw !important;
+    min-width: 98vw !important;
+    margin: 0 auto !important;
+    padding-left: 1vw !important;
+    padding-right: 1vw !important;
   }
   /* Review/Video 單卡全寬 */
   .carousel-card {
-    min-width: 98vw;
-    max-width: 99vw;
-    flex: 0 0 98vw;
-    margin: 0 auto 0.3em auto;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    min-width: 98vw !important;
+    max-width: 99vw !important;
+    flex: 0 0 98vw !important;
+    margin: 0 auto 0.3em auto !important;
+    padding-left: 1vw !important;
+    padding-right: 1vw !important;
   }
   /* 治療流程卡全寬 */
   .process-steps {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.1em;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.1em !important;
   }
   .step {
-    max-width: 99vw;
-    min-width: 98vw;
-    margin: 0 auto 0.6em auto;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    max-width: 99vw !important;
+    min-width: 98vw !important;
+    margin: 0 auto 0.6em auto !important;
+    padding-left: 1vw !important;
+    padding-right: 1vw !important;
   }
 }
-
