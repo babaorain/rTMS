@@ -215,9 +215,46 @@ body {
 .team-role { color: #184579; font-size: 1em; margin-bottom: 0.2em;}
 .team-bio { color: #7a8c94; font-size: 0.95em; }
 @media (max-width: 700px) {
-  .team-list { flex-direction: column; gap: 0.5em;}
-  .team-card { max-width: 99vw; min-width: 98vw; margin: 0 auto; }
+  .team-list {
+    flex-direction: column;
+    gap: 0.5em;
+  }
+  .team-card {
+    max-width: 99vw;
+    min-width: 98vw;
+    margin: 0 auto;
+    /* 建議加強padding */
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
 }
+@media (max-width: 700px) {
+  .carousel-card {
+    min-width: 98vw;
+    max-width: 99vw;
+    flex: 0 0 98vw;
+    margin: 0 auto 0.3em auto;
+    /* padding左右同樣可微調 */
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+}
+@media (max-width: 700px) {
+  .process-steps {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.1em;
+  }
+  .step {
+    max-width: 99vw;
+    min-width: 98vw;
+    margin: 0 auto 0.6em auto;
+    /* padding左右同樣可微調 */
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+}
+
 
 /* FAQ */
 .faq-list { margin-top: 1em; }
