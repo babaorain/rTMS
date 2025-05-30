@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>rTMS 經顱磁刺激｜高雄醫學大學附設中和紀念醫院</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+  :root {
+    --primary: #184579;        /* 深藍 */
+    --secondary: #e9f1f7;      /* 藍灰 */
+    --accent: #3fa9f5;         /* 醫療藍 */
+    --bg: #f4f7fb;             /* 淺藍灰 */
+    --card: #fff;              /* 卡片白 */
+    --shadow: 0 2px 10px rgba(24, 69, 121, 0.10);
+    --radius: 1.2rem;
+  }
+  body {
+    background: var(--bg);
+    font-family: 'Noto Sans TC', 'Microsoft JhengHei', Arial, sans-serif;
+    color: #222;
+    margin: 0;
+    padding: 0;
+  }
+  .section {
+    max-width: 900px;
+    margin: 2rem auto;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2.2rem 1.5rem 1.7rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  header {
+    background: linear-gradient(120deg, var(--primary) 70%, var(--accent) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1.5rem 3rem 1.5rem;
+    border-radius: 0 0 var(--radius) var(--radius);
+    position: relative;
+  }
+  .hero-bar {
+  background: #f4f7fb;
+  border-radius: 1rem;
+  margin: 18px 10px 0 10px;
+  box-shadow: 0 2px 16px #18457911;
+  overflow: hidden;
+}
+
+.hero-header {
+  display: flex;
+  align-items: center;
+  padding: 18px 36px 12px 24px;
+  background: #fff;
+  border-radius: 1rem 1rem 0 0;
+  border-bottom: 1px solid #e0eaf3;
+  gap: 16px;
+}
+
+.hero-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 2.5px solid #e0eaf3;
+  background: #fff;
+}
+
+.hero-hospital {
+  font-size: 1.52rem;
+  font-weight: 700;
+  color: #184579;
+  letter-spacing: 0.03em;
+  font-family: 'Noto Sans TC', 'Microsoft JhengHei', Arial, sans-serif;
+}
+
+.hero-main {
+  background: #184579;
+  position: relative;
+  min-height: 280px;
+  border-radius: 0 0 1rem 1rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg-svg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  pointer-events: none;
+  width: 340px;
+  height: 270px;
+}
+
+.hero-content {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 52px 16px 42px 16px;
+}
+
+.hero-title {
+  color: #fff;
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 8px #0002;
+}
+
+.hero-desc {
+  color: #fff;
+  font-size: 1.24rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  text-shadow: 0 2px 8px #0001;
+  letter-spacing: 0.02em;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: #fff;
+  color: #184579;
+  font-weight: bold;
+  font-size: 1.45rem;
+  border-radius: 14px;
+  padding: 10px 40px 10px 40px;
+  text-decoration: none;
+  box-shadow: 0 2px 18px #18347a13;
+  transition: background 0.16s, color 0.16s, box-shadow 0.16s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+.hero-btn:hover, .hero-btn:focus {
+  background: #e9f1f7;
+  color: #11365e;
+  box-shadow: 0 6px 24px #18457922;
+}
+
+@media (max-width: 600px) {
+  .hero-header {padding: 13px 12px 8px 8px;}
+  .hero-hospital {font-size: 1.1rem;}
+  .hero-main {min-height: 180px;}
+  .hero-content {padding: 28px 3vw 22px 3vw;}
+  .hero-title {font-size: 1.25rem;}
+  .hero-desc {font-size: 0.98rem;}
+  .hero-btn {font-size: 1.08rem; padding: 7px 22px;}
+  .hero-logo {width: 35px; height: 35px;}
+  .hero-bg-svg {width: 140px; height: 88px;}
+}
+  @keyframes float {
+    0%, 100% { transform: translateY(0);}
+    50% { transform: translateY(-12px);}
+  }
+  .btn-primary {
+    background: var(--primary);
+    color: #fff;
+    font-weight: bold;
+    padding: 0.9em 2.1em;
+    font-size: 1.15rem;
+    border: none;
+    border-radius: 2em;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .btn-primary:hover {
+    background: #11365e;
+  }
+  .section-title {
+    font-size: 1.65rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    color: var(--primary);
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+  }
+  .icon {
+    width: 1.7em;
+    height: 1.7em;
+    vertical-align: middle;
+    margin-bottom: -0.2em;
+    /* 若可，換成深藍SVG或單色醫療圖標 */
+  }
+  .process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    margin: 1.5em 0;
+    justify-content: space-between;
+  }
+  .step {
+    background: var(--bg);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 8px rgba(24,69,121,0.08);
+    padding: 1em 1em 1.2em 1em;
+    flex: 1 1 180px;
+    text-align: center;
+    min-width: 160px;
+  }
+  .step .icon {margin-bottom: 0.5em;}
+  .step-title {font-weight: bold; font-size: 1.08em; margin: 0.2em 0;}
+  .step-desc {font-size: 0.97em; color: #444;}
+  .diagnosis-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9em;
+    margin: 1em 0;
+    padding-left: 0;
+    list-style: none;
+  }
+  .diagnosis-list li {
+    background: var(--secondary);
+    color: var(--primary);
+    border-radius: 1.1em;
+    padding: 0.5em 1.1em;
+    font-weight: 500;
+    font-size: 1.08em;
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+  }
+  .team-list {
+    display: flex;
+    gap: 1.3em;
+    flex-wrap: wrap;
+    margin: 1.3em 0 0.2em 0;
+    justify-content: start;
+  }
+  .team-card {
+    background: #f4f7fb;
+    border-radius: var(--radius);
+    padding: 1.2em 1em 0.9em 1em;
+    min-width: 170px;
+    box-shadow: 0 1px 5px #18457913;
+    text-align: center;
+    flex: 1 1 170px;
+    max-width: 200px;
+  }
+  .team-photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e9f1f7;
+    margin-bottom: 0.7em;
+    border: 3px solid #b4cce3;
+  }
+  .team-name {font-weight: bold; font-size: 1.12em; margin-bottom: 0.1em;}
+  .team-role {font-size: 1em; color: #184579; margin-bottom: 0.2em;}
+  .team-bio {font-size: 0.98em; color: #7a8c94;}
+  .review-list {
+    display: flex;
+    gap: 1.1em;
+    flex-wrap: wrap;
+    margin: 1.5em 0;
+  }
+  .review-card {
+    flex: 1 1 170px;
+    min-width: 170px;
+    background: var(--bg);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 8px #18457911;
+    padding: 1.1em 1em;
+    margin-bottom: 1em;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stars {color: #FDCB46; font-size: 1.2em;}
+  .review-text {margin: 0.5em 0 0.5em 0; color: #222;}
+  .review-author {color: #778; font-size: 0.98em;}
+  .faq-list {margin-top: 1em;}
+  .faq-item {
+    background: #e9f1f7;
+    border-radius: 1em;
+    margin-bottom: 0.8em;
+    padding: 1em 1.1em;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: 1px solid #bfd4e6;
+    position: relative;
+  }
+  .faq-question {
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.08em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .faq-answer {
+    margin-top: 0.7em;
+    font-size: 0.98em;
+    color: #222;
+    display: none;
+  }
+  .faq-item.active {background: #d0e3f0;}
+  .faq-item.active .faq-answer {display: block;}
+  .faq-toggle {font-size: 1.35em; transition: 0.2s;}
+  .faq-item.active .faq-toggle {transform: rotate(45deg);}
+  .iframe-responsive {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #eee;
+    border: none;
+    border-radius: 1em;
+    box-shadow: 0 2px 10px #1845790e;
+    margin-bottom: 0.5em;
+  }
+  .hospital-info {
+    font-size: 1.06em;
+    margin-top: 0.7em;
+    line-height: 1.7;
+    color: var(--primary);
+  }
+  .hospital-label {font-weight: bold;}
+  @media (max-width: 900px) {
+    .section {padding: 1.5rem 0.6rem;}
+    .team-list, .review-list, .process-steps {flex-direction: column;}
+    .team-card, .review-card, .step {max-width: 100%;}
+    .diagnosis-list {flex-direction: column;}
+  }
+  @media (max-width: 600px) {
+    header {padding: 2.2rem 0.7rem 1.5rem 0.7rem;}
+    .hero-title {font-size: 1.65rem;}
+    .section-title {font-size: 1.2rem;}
+    .section {padding: 1.1rem 0.5rem;}
+  }
+    .review-carousel-wrap {
+  position: relative;
+  overflow: hidden;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-bottom: 1.3em;
+}
+.review-carousel {
+  display: flex;
+  gap: 2em;
+  transition: transform 0.5s cubic-bezier(.43,.14,.32,1.29);
+  will-change: transform;
+  scroll-behavior: smooth;
+}
+.review-card2 {
+  background: var(--secondary);
+  border-radius: 1.2em;
+  box-shadow: 0 2px 10px rgba(24, 69, 121, 0.07);
+  min-width: 320px;
+  max-width: 340px;
+  flex: 0 0 340px;
+  padding: 1.8em 1.5em 1.3em 1.5em;
+  margin: 0.5em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 1.05em;
+  color: #233142;
+}
+.reviewer {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  margin-bottom: 0.8em;
+}
+.reviewer-icon {
+  background: #e0eaf3;
+  border-radius: 50%;
+  width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+}
+.reviewer-name {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.09em;
+}
+.reviewer-type {
+  color: #48648e;
+  font-size: 0.98em;
+  margin-top: 0.1em;
+}
+.review-text2 {
+  color: #1a2b4c;
+  margin-bottom: 1.3em;
+  line-height: 1.7;
+  min-height: 80px;
+}
+.stars2 {
+  color: #FDCB46;
+  font-size: 1.22em;
+  letter-spacing: 0.1em;
+}
+.review-carousel-btns {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 1.7em;
+  margin-bottom: 0.2em;
+}
+
+.carousel-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 1.65em;
+  font-weight: bold;
+  box-shadow: 0 4px 18px rgba(24, 69, 121, 0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s, box-shadow 0.18s, transform 0.12s;
+  outline: none;
+  border: 2px solid #e9f1f7;
+}
+.carousel-btn:hover, .carousel-btn:focus {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 9px #3fa9f555, 0 1.5px 8px #18457922;
+  transform: scale(1.08);
+  border: 2px solid #b4cce3;
+}
+
+
+</style>
+
+</head>
+<body>
+  <!-- Hero Section 完全仿照圖片 -->
+<div class="hero-bar">
+  <div class="hero-header">
+    <img src="https://www.kmuh.org.tw/images/2016/logo.png" class="hero-logo" alt="醫院LOGO">
+    <span class="hero-hospital">高雄醫學大學附設中和紀念醫院 復健部</span>
+  </div>
+  <div class="hero-main">
+    <div class="hero-bg-svg">
+      <!-- 右下角裝置/線條圖，可換成你要的SVG或先留空 -->
+      <svg width="320" height="270" viewBox="0 0 320 270" fill="none" style="position:absolute;bottom:0;right:0;z-index:1;opacity:0.17;">
+        <circle cx="200" cy="200" r="115" stroke="#fff" stroke-width="6"/>
+        <rect x="230" y="180" width="70" height="120" rx="13" fill="#fff" fill-opacity="0.16" stroke="#fff" stroke-width="3"/>
+        <path d="M 260 260 L 290 210" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+        <path d="M 240 220 L 250 250" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="hero-content">
+      <div class="hero-title">重複經顱磁刺激治療（rTMS）</div>
+      <div class="hero-desc">非侵入性神經調節技術，有效幫助中風患者肢體與語言恢復</div>
+      <a href="#booking" class="hero-btn">立即預約</a>
+    </div>
+  </div>
+</div>
+
+
+  <!-- rTMS基本原理 -->
+  <div class="section" id="about">
+    <div class="section-title">
+      <img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f52c.png" alt="原理icon"/>
+      rTMS 是什麼？
+    </div>
+    <div style="display: flex; gap:1.5em; align-items: flex-start; flex-wrap: wrap;">
+      <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f9e0.png" alt="腦科學" style="width:72px;flex:0 0 72px;">
+      <div style="flex:1 1 200px; font-size:1.07em;">
+        經顱磁刺激（repetitive Transcranial Magnetic Stimulation, rTMS）是一種非侵入性的神經調控技術，利用變化的磁場穿透頭皮，誘發腦內神經元產生微弱電流，進而活化或調整腦部功能。<br>
+        在復健醫學領域，rTMS 主要應用於促進腦中風、腦損傷、脊髓損傷後的神經重建與功能恢復，過程安全、無痛，治療時不需麻醉或手術。
+      </div>
+    </div>
+  </div>
+
+  <!-- 適應症與治療流程 -->
+  <div class="section" id="indication">
+    <div class="section-title">
+      <img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4aa.png" alt="適應症"/>
+      適應症 & 治療流程
+    </div>
+    <div>
+      <b>rTMS常見適應症：</b>
+      <ul class="diagnosis-list">
+        <li><img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f9be.png">中風後肢體無力</li>
+        <li><img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3cb.png">腦外傷後神經功能障礙</li>
+        <li><img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f9b5.png">脊髓損傷後神經重建</li>
+        <li><img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1fa7c.png">周邊神經損傷後康復</li>
+      </ul>
+    </div>
+    <div style="margin-top:1.4em;">
+      <b>治療流程：</b>
+      <div class="process-steps">
+        <div class="step">
+          <img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f468-200d-1f3eb.png" />
+          <div class="step-title">專業醫師評估</div>
+          <div class="step-desc">由復健專科醫師進行個別狀況評估與說明治療計畫。</div>
+        </div>
+        <div class="step">
+          <img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4d6.png" />
+          <div class="step-title">量身訂製療程</div>
+          <div class="step-desc">根據病人情況，規劃個人化rTMS治療參數與次數。</div>
+        </div>
+        <div class="step">
+          <img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f9ea.png" />
+          <div class="step-title">執行rTMS刺激</div>
+          <div class="step-desc">於治療室內安全、無痛地進行經顱磁刺激。</div>
+        </div>
+        <div class="step">
+          <img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f91d.png" />
+          <div class="step-title">療程追蹤</div>
+          <div class="step-desc">持續追蹤功能恢復，必要時調整治療計畫。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 影片區 -->
+  <div class="section" id="video">
+    <div class="section-title">
+      <img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3a5.png"/>
+      rTMS 治療介紹影片
+    </div>
+    <iframe class="iframe-responsive" src="https://www.youtube.com/embed/_Cty7pT7T7w" allowfullscreen></iframe>
+    <div style="color:#888;font-size:0.95em;">* 若影片無法播放，請確認網路連線或稍後再試。</div>
+  </div>
+
+  <!-- 醫療團隊介紹 -->
+  <div class="section" id="team">
+    <div class="section-title">
+      <img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f468-200d-2695-fe0f.png"/>
+      醫療團隊介紹
+    </div>
+    <div class="team-list">
+      <div class="team-card">
+        <img class="team-photo" src="https://randomuser.me/api/portraits/men/32.jpg" alt="醫師A"/>
+        <div class="team-name">林建宇 醫師</div>
+        <div class="team-role">復健專科主治醫師</div>
+        <div class="team-bio">專長：神經復健、運動障礙治療，致力於提升病患生活品質。</div>
+      </div>
+      <div class="team-card">
+        <img class="team-photo" src="https://randomuser.me/api/portraits/women/21.jpg" alt="醫師B"/>
+        <div class="team-name">黃怡婷 醫師</div>
+        <div class="team-role">資深住院醫師</div>
+        <div class="team-bio">熱心投入rTMS治療研究，關注神經修復與新興療法。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 患者治療體驗分享 -->
+<div class="section" id="review">
+  <div class="section-title" style="justify-content:center;">
+    患者治療體驗分享
+  </div>
+  <div class="review-carousel-wrap">
+    <div class="review-carousel" id="reviewCarousel">
+      <!-- 卡片1 -->
+      <div class="review-card2">
+        <div class="reviewer">
+          <div class="reviewer-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#184579" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/></svg>
+          </div>
+          <div>
+            <div class="reviewer-name">陳小姐</div>
+            <div class="reviewer-type">憂鬱症患者</div>
+          </div>
+        </div>
+        <div class="review-text2">
+          "經過8週的TMS治療，我的憂鬱症狀明顯改善。以前總是感到無力和悲傷，現在能夠重新享受生活，重拾工作熱情。治療過程舒適，醫護人員非常專業和關懷。"
+        </div>
+        <div class="stars2">★★★★★</div>
+      </div>
+      <!-- 卡片2 -->
+      <div class="review-card2">
+        <div class="reviewer">
+          <div class="reviewer-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#184579" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/></svg>
+          </div>
+          <div>
+            <div class="reviewer-name">林先生</div>
+            <div class="reviewer-type">焦慮症患者</div>
+          </div>
+        </div>
+        <div class="review-text2">
+          "我曾嘗試過多種藥物治療焦慮症，效果都不理想。接受TMS治療後，我的焦慮發作頻率明顯減少，睡眠品質也大幅改善。最重要的是，治療過程沒有藥物的副作用，讓我能夠保持清醒的頭腦工作。"
+        </div>
+        <div class="stars2">★★★★★</div>
+      </div>
+      <!-- 卡片3 -->
+      <div class="review-card2">
+        <div class="reviewer">
+          <div class="reviewer-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#184579" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a8.38 8.38 0 0 1 13 0"/></svg>
+          </div>
+          <div>
+            <div class="reviewer-name">王女士</div>
+            <div class="reviewer-type">慢性疼痛患者</div>
+          </div>
+        </div>
+        <div class="review-text2">
+          "我因為車禍後遺症導致慢性疼痛多年，嘗試過各種治療都沒有效果。TMS療程讓我的疼痛大幅減輕，也能重新回歸正常生活。"
+        </div>
+        <div class="stars2">★★★★★</div>
+      </div>
+    </div>
+    <div class="review-carousel-btns">
+      <button class="carousel-btn" id="carouselPrev" aria-label="上一則">&lt;</button>
+      <button class="carousel-btn" id="carouselNext" aria-label="下一則">&gt;</button>
+    </div>
+  </div>
+</div>
+
+
+  <!-- FAQ -->
+  <div class="section" id="faq">
+    <div class="section-title">
+      <img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2753.png"/>
+      常見問答
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">rTMS治療會痛嗎？ <span class="faq-toggle">＋</span></div>
+        <div class="faq-answer">治療過程為非侵入性，大多數人僅會感覺輕微敲擊感或皮膚微震，幾乎無明顯疼痛。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">rTMS治療多久見效？ <span class="faq-toggle">＋</span></div>
+        <div class="faq-answer">部分患者於數次治療後即可感受改善，實際療效依個人狀況而異，建議完整療程後再評估。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">治療後需要住院嗎？ <span class="faq-toggle">＋</span></div>
+        <div class="faq-answer">rTMS為門診治療，治療後可正常返家，不需住院。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">治療過程安全嗎？ <span class="faq-toggle">＋</span></div>
+        <div class="faq-answer">治療過程安全，副作用輕微，常見如局部頭皮輕微不適，少數人可能出現暫時性頭痛。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">有哪些人不適合接受rTMS？ <span class="faq-toggle">＋</span></div>
+        <div class="faq-answer">裝有心律調節器、腦內金屬植入物者，或有癲癇病史者，應先諮詢醫師再行治療。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 醫院資訊 -->
+  <div class="section" id="info">
+    <div class="section-title">
+      <img class="icon" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f3e5.png"/>
+      醫院資訊
+    </div>
+    <div class="hospital-info">
+      <div><span class="hospital-label">院名：</span>高雄醫學大學附設中和紀念醫院</div>
+      <div><span class="hospital-label">地址：</span>807 台灣高雄市三民區十全一路100號</div>
+      <div><span class="hospital-label">電話：</span>07-312-1101</div>
+      <div><span class="hospital-label">信箱：</span>service@kmu.edu.tw</div>
+    </div>
+  </div>
+
+  <script>
+    // FAQ互動展開/收起
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+  <script>
+const carousel = document.getElementById('reviewCarousel');
+const prevBtn = document.getElementById('carouselPrev');
+const nextBtn = document.getElementById('carouselNext');
+let position = 0;
+
+function updateCarousel() {
+  const cardWidth = carousel.querySelector('.review-card2').offsetWidth + 32; // 32 = gap
+  carousel.style.transform = `translateX(${-position * cardWidth}px)`;
+}
+
+nextBtn.onclick = function() {
+  if (position < carousel.children.length - 1) { position++; updateCarousel(); }
+}
+prevBtn.onclick = function() {
+  if (position > 0) { position--; updateCarousel(); }
+}
+
+// 滑動手勢支援（手機）
+let startX = 0, isDown = false;
+carousel.addEventListener('touchstart', (e) => {isDown=true; startX = e.touches[0].clientX;});
+carousel.addEventListener('touchend', () => {isDown=false;});
+carousel.addEventListener('touchmove', (e) => {
+  if (!isDown) return;
+  let diff = startX - e.touches[0].clientX;
+  if (diff > 30 && position < carousel.children.length - 1) { position++; updateCarousel(); isDown=false;}
+  if (diff < -30 && position > 0) { position--; updateCarousel(); isDown=false;}
+});
+</script>
+
+</body>
+</html>
