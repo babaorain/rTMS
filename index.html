@@ -215,6 +215,41 @@
         transform: translateX(-50%);
       }
     }
+    .team-list {
+    display: flex;
+    gap: 1.3em;
+    flex-wrap: wrap;
+    margin: 1.3em 0 0.2em 0;
+    justify-content: start;
+  }
+  .team-card {
+    background: #f4f7fb;
+    border-radius: var(--radius);
+    padding: 1.2em 1em 0.9em 1em;
+    min-width: 170px;
+    box-shadow: 0 1px 5px #18457913;
+    text-align: center;
+    flex: 1 1 170px;
+    max-width: 200px;
+  }
+  .team-photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e9f1f7;
+    margin-bottom: 0.7em;
+    border: 3px solid #b4cce3;
+  }
+  .team-name {font-weight: bold; font-size: 1.12em; margin-bottom: 0.1em;}
+  .team-role {font-size: 1em; color: #184579; margin-bottom: 0.2em;}
+  .team-bio {font-size: 0.98em; color: #7a8c94;}
+  .review-list {
+    display: flex;
+    gap: 1.1em;
+    flex-wrap: wrap;
+    margin: 1.5em 0;
+  }
     /* ====== Review Carousel + 動畫效果 ====== */
     .review-carousel-wrap {
       position: relative;
