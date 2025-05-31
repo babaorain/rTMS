@@ -268,9 +268,7 @@ body {
   padding: 1em;
   text-align: center;
   box-shadow: 0 2px 9px #18457913;
-  width: 100%;
-  min-width: 0;
-  max-width: 230px;
+  width: 96%;
   flex: 1 1 160px;
   margin: 0;
   box-sizing: border-box;
@@ -314,6 +312,7 @@ body {
   border: 1px solid #bfd4e6;
   position: relative;
   margin: 0;
+  width: 96%;
   box-sizing: border-box;
 }
 .faq-question {
@@ -363,13 +362,13 @@ body {
 
   .hero-header,
   .hero-main {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 2%;
+    padding-right: 2%;
   }
   
   .main-image-area {
     max-width: 100%;
-    padding: 1em 1vw;
+    padding: 2% 2%;
     margin-top: 1em;
   }
   .main-image {
@@ -377,12 +376,10 @@ body {
   }
   
   .section {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+    padding: 1.2rem 1.2rem;
   }
   .section-title {
-    padding-left: 0.15em;
-    padding-right: 0.15em;
+    padding: 0.15em 0.15em;
   }
 }
 
