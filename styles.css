@@ -334,56 +334,55 @@ body {
 /* === RWD 手機版徹底優化 === */
 @media (max-width: 700px) {
   .main-wrap {
-    max-width: 100vw;
-    padding: 0 2vw;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 2%;
   }
+
   .hero-header,
   .hero-main {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
   }
+
   .section {
-    padding-left: 1vw !important;
-    padding-right: 1vw !important;
+    padding: 0 1%;
   }
-  /* 單卡滿版與排版一致 */
+
   .carousel-card,
   .team-card,
   .faq-item {
-    min-width: 90vw !important;
-    max-width: 98vw !important;
-    width: 98vw !important;
-    margin: 0 auto 1em auto !important;
+    width: 90%;
+    margin: 0 auto 1em;
     box-sizing: border-box;
   }
-  .team-list {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 0.7em !important;
-  }
-  .carousel {
-    gap: 0 !important;
-  }
-  /* 流程步驟單列 */
+
+  .team-list,
   .process-steps {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 0.3em !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7em;
   }
+
   .step {
-    min-width: 90vw !important;
-    max-width: 98vw !important;
-    width: 98vw !important;
-    margin: 0 auto 0.6em auto !important;
+    width: 90%;
+    margin: 0 auto 0.6em;
   }
-  /* 流程箭頭變垂直 */
+
   .arrow::after {
     content: "↓";
   }
-  .iframe-responsive {
-    aspect-ratio: 16/9;
-    min-width: 100%;
-    max-width: 100vw;
-    height: auto;
+
+  .iframe-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+
+  .iframe-container iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
   }
 }
