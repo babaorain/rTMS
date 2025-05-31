@@ -86,6 +86,27 @@ body {
   transform: translateY(-2px);
 }
 
+.main-image-area {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 1.5rem auto 0 auto;
+  padding: 1.2em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 950px;
+  box-sizing: border-box;
+}
+
+.main-image {
+  max-width: 100%;
+  border-radius: 0.9em;
+  object-fit: cover;
+  box-shadow: 0 2px 9px #18457913;
+  /* 若想統一高寬可加 height，或 aspect-ratio */
+}
+
 /* 通用卡片外框區塊 Section */
 .section {
   background: var(--card);
@@ -344,7 +365,16 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
-
+  
+  .main-image-area {
+    max-width: 100%;
+    padding: 1em 1vw;
+    margin-top: 1em;
+  }
+  .main-image {
+    border-radius: 0.6em;
+  }
+  
   .section {
     padding: 0 1%;
   }
