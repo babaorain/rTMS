@@ -39,6 +39,7 @@ body {
   align-items: center;
   padding: 0.9rem 1.1rem;
   gap: 1rem;
+  font-size: 0.8rem;
 }
 .hero-logo {
   width: 3.1rem;
