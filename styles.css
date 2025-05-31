@@ -381,12 +381,17 @@ body {
     padding: 0.15em 0.15em;
   }
 }
-
+  .carousel-wrap, . review-carousel-wrap{
+    overflow: hidden
+    width: 100%;
+    box-sizing: border-box;
+  }
+   
   .carousel-card,
   .team-card,
   .faq-item {
     width: 90%;
-    margin: 0 auto 1em;
+    margin: 0 auto;
     box-sizing: border-box;
   }
 
